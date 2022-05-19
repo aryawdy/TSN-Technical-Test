@@ -5,6 +5,7 @@ class CartController {
     try {
       const { name, price, imageUrl, size, gender } = req.body;
       const User = req.userLogin.id;
+
       await Cart.create({ name, price, imageUrl, size, gender, User });
       res.status(201).json({ message: "Product has been added to cart" });
     } catch (error) {
