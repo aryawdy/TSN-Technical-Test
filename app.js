@@ -15,8 +15,7 @@ app.use(errorHandler);
 
 const mongoose = require("mongoose");
 const { config } = require("dotenv");
-const mongoDB =
-  "mongodb+srv://arya:TXazVM1fJ5XHzcPC@cluster0.ngdjf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const mongoDB = process.env.MONGGO_KEY;
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
