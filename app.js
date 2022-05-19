@@ -5,7 +5,7 @@ const port = 3000;
 const cors = require("cors");
 const router = require("./routes");
 const errorHandler = require("./middlewares/errorHandler");
-
+const { MONGGO_KEY } = require("./env");
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -15,7 +15,7 @@ app.use(errorHandler);
 
 const mongoose = require("mongoose");
 const { config } = require("dotenv");
-const mongoDB = process.env.MONGGO_KEY;
+const mongoDB = MONGGO_KEY;
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));

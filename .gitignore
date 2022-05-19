@@ -1,3 +1,5 @@
 node_modules
 backup
 mongo-data
+.env
+env.js
