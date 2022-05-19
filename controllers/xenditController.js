@@ -83,7 +83,6 @@ class XenditController {
   static async getInvoice(req, res, next) {
     try {
       const { invoiceId } = req.params;
-      console.log(invoiceId);
       const { data } = await axios.get(
         `https://api.xendit.co/v2/invoices/${invoiceId}`,
         {
