@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const port = 3000;
@@ -13,6 +14,7 @@ app.use("/", router);
 app.use(errorHandler);
 
 const mongoose = require("mongoose");
+const { config } = require("dotenv");
 const mongoDB =
   "mongodb+srv://arya:TXazVM1fJ5XHzcPC@cluster0.ngdjf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });

@@ -1,11 +1,12 @@
 const Product = require("../models/product");
 const { ObjectId } = require("mongodb");
-
+const User = require("../models/user");
 class ProductController {
   static async getProducts(req, res, next) {
     try {
       let products = await Product.find();
-      res.status(200).json(products);
+      const users = await User.find();
+      res.status(200).json(users);
     } catch (error) {
       next(error);
     }
