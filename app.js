@@ -5,7 +5,7 @@ const port = 3000;
 const cors = require("cors");
 const router = require("./routes");
 const errorHandler = require("./middlewares/errorHandler");
-const { MONGGO_KEY } = require("./env");
+
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
